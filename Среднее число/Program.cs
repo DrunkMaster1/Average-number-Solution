@@ -1,24 +1,41 @@
-﻿using System.Runtime.Serialization.Formatters;
+﻿using System;
+using System.Runtime.Serialization.Formatters;
+using Среднее_число;
 
 internal class Program
 {
     private static void Main(string[] args)
     {
-        
-        int[] nums = new int[4];
-        
-        Console.WriteLine("Введите 10 чисел, если необходимо остановить ввод, введите \"0\"");
-        
-        for (int i = 0; i<nums.Length; i++)
+
+
+
+     int b = 0;
+     int temp = 0;
+     int[] array = new int[10];
+     
+        Console.WriteLine("Введите 10 чисел");
+
+        for (int i = 0; i < array.Length; i++)
         {
-            
-            nums[i] = int.Parse(Console.ReadLine());
-            if (Console.ReadLine() == "0") break;
-            else if (nums[i] ==4) break;
+            int c = int.Parse(Console.ReadLine());
+            array[b] = c;
+            temp += array[b];
+            if (c == 0) break;
 
 
         }
-        
+        int result = temp / LastIndexOf(array);
+        Console.Write("Среднее число: ");
+        Console.WriteLine(result);
+
+
+
+
+
+
+        //MetSred c = new MetSred();
+        //c.sredNumber();
+
 
     }
 }
